@@ -1,0 +1,8 @@
+{
+    "require": {
+        "nmred/kafka-php": "v0.2.0.8",
+        "monolog/monolog": "^2.1",
+        "phpunit/phpunit": "^9.5",
+        "josantonius/ip": "^1.0"
+    }
+}
