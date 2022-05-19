@@ -1,6 +1,15 @@
 ---
 version: '2'
 services:
+  www:
+    build: .
+    restart: always
+    ports:
+      - '8000:80'
+    volumes:
+      - ./www:/var/www/html
+    networks:
+      - default
   zookeeper-1:
     image: confluentinc/cp-zookeeper:latest
     environment:
