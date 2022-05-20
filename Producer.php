@@ -1,7 +1,7 @@
 <?php
 require './vendor/autoload.php';
 
-
+use Monolog\Handler\StdoutHandler;
 use Monolog\Logger;
 use Monolog\Handler\StreamHandler;
 
@@ -16,7 +16,8 @@ $config->setMetadataBrokerList('localhost:9092');
 $config->setBrokerVersion('1.0.0');
 $config->setRequiredAck(1);
 $config->setIsAsyn(false);
-$config->setProduceInterval(500);
+$config->setProduceInterval(90000);
+
 $producer = new \Kafka\Producer(
     function() {
         return [
@@ -24,6 +25,7 @@ $producer = new \Kafka\Producer(
                 'topic' => 'test',
                 'value' => '200.141.167.99',
                 'key' => 'testkey',
+                'timestamp' => '2022-04-01'
             ],
         ];
     }
@@ -31,8 +33,10 @@ $producer = new \Kafka\Producer(
 $producer->setLogger($logger);
 $producer->success(function($result) {
 	var_dump($result);
+    echo "ok";
 });
 $producer->error(function($errorCode) {
 		var_dump($errorCode);
+        echo "erro";
 });
 $producer->send(true);
