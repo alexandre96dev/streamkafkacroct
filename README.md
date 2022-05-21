@@ -1,1 +1,4 @@
 # streamkafkacroct
+
+
+##requisitos do projeto
