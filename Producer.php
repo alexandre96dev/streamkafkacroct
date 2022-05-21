@@ -24,8 +24,7 @@ $producer = new \Kafka\Producer(
             [
                 'topic' => 'test',
                 'value' => '200.141.167.99',
-                'key' => 'testkey',
-                'timestamp' => '2022-04-01'
+                'key' => 'testkey'
             ],
         ];
     }

@@ -13,7 +13,7 @@ $logger = new Logger('my_logger');
 $logger->pushHandler(new StreamHandler(__DIR__ . '/logs/app.log', Logger::DEBUG));
 
 $config = \Kafka\ConsumerConfig::getInstance();
-$config->setMetadataRefreshIntervalMs(1800000);
+$config->setMetadataRefreshIntervalMs(1000);
 $config->setMetadataBrokerList('localhost:9092');
 $config->setGroupId('test');
 $config->setBrokerVersion('1.0.0');
