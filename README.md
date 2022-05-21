@@ -1,7 +1,6 @@
 # REQUISITOS DO PROJETO
-
--composer
--docker
+- composer
+- docker
 
 # comandos para instalar as demendências do projeto
 - docker compose up -d
